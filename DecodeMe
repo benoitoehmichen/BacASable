@@ -1,0 +1,25 @@
+function decode(str) {
+  let correctWord = "";
+
+  // Insert your code here
+
+  for (let i = 0; i < str.length; i++) {
+    console.log("i = ", i);
+    console.log(
+      `Character code ${str.charCodeAt(i)} is equal to ${str.charAt(i)}`
+    );
+    console.log("current charCodeAt = ", str.charCodeAt(i));
+    let currentindexPlusOne = str.charCodeAt(i) + 1;
+    console.log(
+      "currentindexPlusOne ",
+      currentindexPlusOne,
+      " nextletter = ",
+      (correctWord += String.fromCharCode(currentindexPlusOne))
+    );
+  }
+  return correctWord;
+}
+
+const word = "bnchmf";
+console.log(decode(word));
+// Expected result: coding
