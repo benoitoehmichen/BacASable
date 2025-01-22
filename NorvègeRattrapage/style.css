@@ -1,0 +1,12 @@
+h1 {
+  color: red;
+  font-size: 55;
+}
+
+p {
+  border: 2px dashed blue;
+}
+
+#image {
+  height: 40vh;
+}
