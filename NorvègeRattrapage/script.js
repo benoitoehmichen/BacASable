@@ -75,3 +75,92 @@ contact.city = "Boulogne";
 
 contact["Benoit"] = "nouveau benoit";
 console.log("contact = ", contact);
+
+const message =
+  "You can call me at : 0612715847 or 0612715846 Or this number : 0612715846";
+
+const pattern = /06[0-9]{9}/g;
+const allPhones = message.match(pattern);
+console.log("allPhones = ", allPhones);
+
+//---------------
+//---------------
+
+const extractedText = document.querySelector(
+  "#globalContainer > #container > .myButton"
+).textContent;
+
+console.log("extractedText = ", extractedText);
+
+document.querySelector(
+  "#globalContainer > #container > .myButton"
+).textContent = "Nouveau Bouton ";
+
+console.log(document.querySelector("#container").innerHTML);
+
+document.querySelector("#container").innerHTML += `
+<ul>
+<li>Bluetooth</li>
+<li>Yoshi</li>
+</ul>
+`;
+
+const allBaliseP = document.querySelectorAll("p");
+console.log("allBaliseP = ", allBaliseP);
+
+for (let i = 0; i < allBaliseP.length; i++) {
+  console.log("item ", i, " = ", allBaliseP[i].textContent);
+}
+
+const parent = document.querySelector("#container").parentNode;
+
+console.log("parent = ", parent);
+
+const numberBaliseP = document.querySelectorAll("p").length;
+
+const allDocument = document.querySelector("#globalContainer");
+const messageCount = document.createElement("div");
+
+switch (numberBaliseP) {
+  case 0:
+    messageCount.style.fontSize = 10;
+    console.log("Hy there");
+    break;
+  case 1:
+    messageCount.style.fontSize = 20;
+    break;
+  case 2:
+    messageCount.style.fontSize = 30;
+    break;
+  case 3:
+    messageCount.style.fontSize = "40px";
+    console.log("Hy there");
+    break;
+  case 4:
+    messageCount.style.fontSize = 50;
+    break;
+}
+
+messageCount.id = "messageCount";
+messageCount.textContent = `Voici le nomlbrs de balises p = ${numberBaliseP}`;
+allDocument.appendChild(messageCount);
+
+var clone = messageCount.cloneNode(true);
+document.body.appendChild(clone);
+
+//---------------
+//---------------x
+
+document.querySelector(".myButton").addEventListener("click", function () {
+  console.log("button clicked");
+  const valeurSaisie = document.querySelector(".inputText").value;
+  console.log("valeurSaisie = ", valeurSaisie);
+});
+
+for (let i = 0; i < document.querySelectorAll("li").length; i++) {
+  console.log("YYYY");
+  document.querySelectorAll("li")[i].addEventListener("click", () => {
+    console.log("LI cliqued, i = ", i);
+    console.log(this.innerHTML);
+  });
+}
